@@ -1,7 +1,7 @@
 # iDEAL plugin for Event Espresso 4.x
 
 ## Usage
-Use this plugin to add support for iDEAL, Bancontact, Sofort ,Paysafecard , Afterpay, Bankwire, Refunds    
+Use this plugin to add support for iDEAL, Bancontact, Sofort ,Paysafecard , Afterpay, Bankwire,     
 First create an account at https://www.digiwallet.nl
 
 
