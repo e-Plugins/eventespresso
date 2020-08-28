@@ -1,0 +1,144 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Event Espresso - Digiwallet (EE 4.x+)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-31 09:08+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.3.0; wp-5.2.2"
+
+#: payment_methods/Bankwire/templates/bankwire_payment_details_content.template.php:22
+msgid ""
+"* Payment for our webstore is processed by TargetMedia. TargetMedia is "
+"certified as a Collecting Payment Service Provider by Currence. This means "
+"we set the highest security standards when is comes to security of payment "
+"for you as a customer and us as a webshop."
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Activates iDEAL, Bancontact, Sofort Banking, Visa / Mastercard Credit cards, "
+"PaysafeCard, AfterPay, BankWire, PayPal and Refunds in Event Espresso."
+msgstr ""
+
+#: payment_methods/Sofort/EE_PMT_Sofort.pm.php:24
+#: payment_methods/Bancontact/EE_PMT_Bancontact.pm.php:24
+#: payment_methods/Paysafecard/EE_PMT_Paysafecard.pm.php:24
+#: payment_methods/Ideal/EE_PMT_Ideal.pm.php:24
+#: payment_methods/Paypal/EE_PMT_Paypal.pm.php:24
+#: payment_methods/Afterpay/EE_PMT_Afterpay.pm.php:24
+#: payment_methods/Bankwire/EE_PMT_Bankwire.pm.php:24
+#: payment_methods/Creditcard/EE_PMT_Creditcard.pm.php:24
+msgid ""
+"After finalizing your registration, you will be transferred to the website "
+"of your bank where your payment will be securely processed."
+msgstr ""
+
+#: includes/digiwallet.class.gateway.php:192
+msgid "Digiwallet Error message: "
+msgstr ""
+
+#: payment_methods/Sofort/EE_PMT_Sofort.pm.php:46
+#: payment_methods/Bancontact/EE_PMT_Bancontact.pm.php:46
+#: payment_methods/Paysafecard/EE_PMT_Paysafecard.pm.php:46
+#: payment_methods/Ideal/EE_PMT_Ideal.pm.php:47
+#: payment_methods/Paypal/EE_PMT_Paypal.pm.php:46
+#: payment_methods/Afterpay/EE_PMT_Afterpay.pm.php:46
+#: payment_methods/Bankwire/EE_PMT_Bankwire.pm.php:46
+#: payment_methods/Creditcard/EE_PMT_Creditcard.pm.php:46
+msgid "Digiwallet Outlet Identifier"
+msgstr ""
+
+#. Author of the plugin
+msgid "DigiWallet.nl"
+msgstr ""
+
+#: includes/digiwallet.class.gateway.php:233
+msgid "Error occurred while trying to process the payment."
+msgstr ""
+
+#. Name of the plugin
+msgid "Event Espresso - Digiwallet (EE 4.x+)"
+msgstr ""
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://www.digiwallet.nl"
+msgstr ""
+
+#: payment_methods/Bankwire/templates/bankwire_payment_details_content.template.php:19
+#, php-format
+msgid ""
+"If it is necessary for payments abroad, then the BIC code from the bank "
+"<span style=\"color:red\">%1$s</span> and the name of the bank is %2$s."
+msgstr ""
+
+#: payment_methods/Bankwire/templates/bankwire_payment_details_content.template.php:15
+#, php-format
+msgid ""
+"State the payment feature <b>%1$s</b>, this way the payment can be "
+"automatically processed.<br>\n"
+"                    As soon as this happens you shall receive a confirmation "
+"mail on %2$s."
+msgstr ""
+
+#: payment_methods/Bankwire/templates/bankwire_payment_details_content.template.php:9
+msgid "Thank you for ordering!"
+msgstr ""
+
+#: payment_methods/Bankwire/templates/bankwire_payment_details_content.template.php:12
+#, php-format
+msgid ""
+"Would you be so friendly to transfer the total amount of € %1$s to the "
+"bankaccount <b style=\"color:red\">%2$s</b> in name of %3$s* ?"
+msgstr ""
+
+#: payment_methods/Sofort/templates/sofort_intro.template.php:3
+#: payment_methods/Bancontact/templates/bancontact_intro.template.php:3
+#: payment_methods/Paysafecard/templates/paysafecard_intro.template.php:3
+#: payment_methods/Ideal/templates/ideal_intro.template.php:3
+#: payment_methods/Paypal/templates/paypal_intro.template.php:3
+#: payment_methods/Afterpay/templates/afterpay_intro.template.php:3
+#: payment_methods/Bankwire/templates/bankwire_intro.template.php:3
+#: payment_methods/Creditcard/templates/creditcard_intro.template.php:3
+msgid "You need a Digiwallet account to use this plugin. Sign up on"
+msgstr ""
+
+#: payment_methods/Bankwire/templates/bankwire_payment_details_content.template.php:11
+msgid ""
+"You will receive your order as soon as we receive payment from the bank."
+msgstr ""
+
+#: payment_methods/Sofort/EE_PMT_Sofort.pm.php:47
+#: payment_methods/Bancontact/EE_PMT_Bancontact.pm.php:47
+#: payment_methods/Paysafecard/EE_PMT_Paysafecard.pm.php:47
+#: payment_methods/Ideal/EE_PMT_Ideal.pm.php:48
+#: payment_methods/Paypal/EE_PMT_Paypal.pm.php:47
+#: payment_methods/Afterpay/EE_PMT_Afterpay.pm.php:47
+#: payment_methods/Bankwire/EE_PMT_Bankwire.pm.php:47
+#: payment_methods/Creditcard/EE_PMT_Creditcard.pm.php:47
+msgid ""
+"Your Digiwallet Outlet Identifier, You can find this in your organization "
+"dashboard under Websites & Outlets on <a href=\"https://www.digiwallet.nl\" "
+"target=\"_blank\">https://www.digiwallet.nl</a>"
+msgstr ""
+
+#: includes/digiwallet.class.gateway.php:201
+msgid "Your payment is approved."
+msgstr ""
+
+#: includes/digiwallet.class.gateway.php:192
+msgid "Your payment is failed."
+msgstr ""
+
+#: includes/digiwallet.class.gateway.php:212
+msgid "Your payment is paid partial."
+msgstr ""
