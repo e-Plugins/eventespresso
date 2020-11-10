@@ -15,7 +15,7 @@
 class DigiwalletCoreEE4
 {
     // Constants
-    const APP_ID = 'dw_eventEspresso4.10_1.1';
+    const APP_ID = 'dw_eventEspresso4.10_1.0.3';
     
     const MIN_AMOUNT            = 84;
     
