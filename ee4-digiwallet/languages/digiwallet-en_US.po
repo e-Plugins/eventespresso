@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Event Espresso - Digiwallet (EE 4.x+)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-31 09:08+0000\n"
-"PO-Revision-Date: 2019-07-31 09:10+0000\n"
+"PO-Revision-Date: 2021-06-14 02:55+0000\n"
 "Last-Translator: admin <harry@itoideal.com>\n"
 "Language-Team: English (United States)\n"
 "Language: en_US\n"
@@ -27,21 +27,27 @@ msgstr ""
 "for you as a customer and us as a webshop."
 
 #. Description of the plugin
+#| msgid ""
+#| "Activates iDEAL, Bancontact, Sofort Banking, Visa / Mastercard Credit "
+#| "cards, PaysafeCard, AfterPay, BankWire, PayPal and Refunds in Event "
+#| "Espresso."
 msgid ""
-"Activates iDEAL, Bancontact, Sofort Banking, Visa / Mastercard Credit cards, "
+"Activates iDEAL, Bancontact, Sofort, Visa / Mastercard Credit cards, "
 "PaysafeCard, AfterPay, BankWire, PayPal and Refunds in Event Espresso."
 msgstr ""
-"Activates iDEAL, Bancontact, Sofort Banking, Visa / Mastercard Credit cards, "
+"Activates iDEAL, Bancontact, Sofort, Visa / Mastercard Credit cards, "
 "PaysafeCard, AfterPay, BankWire, PayPal and Refunds in Event Espresso."
 
-#: payment_methods/Sofort/EE_PMT_Sofort.pm.php:24
-#: payment_methods/Bancontact/EE_PMT_Bancontact.pm.php:24
-#: payment_methods/Paysafecard/EE_PMT_Paysafecard.pm.php:24
-#: payment_methods/Ideal/EE_PMT_Ideal.pm.php:24
-#: payment_methods/Paypal/EE_PMT_Paypal.pm.php:24
 #: payment_methods/Afterpay/EE_PMT_Afterpay.pm.php:24
+#: payment_methods/Bancontact/EE_PMT_Bancontact.pm.php:24
 #: payment_methods/Bankwire/EE_PMT_Bankwire.pm.php:24
 #: payment_methods/Creditcard/EE_PMT_Creditcard.pm.php:24
+#: payment_methods/EPS/EE_PMT_EPS.pm.php:24
+#: payment_methods/Giropay/EE_PMT_Giropay.pm.php:24
+#: payment_methods/Ideal/EE_PMT_Ideal.pm.php:24
+#: payment_methods/Paypal/EE_PMT_Paypal.pm.php:24
+#: payment_methods/Paysafecard/EE_PMT_Paysafecard.pm.php:24
+#: payment_methods/Sofort/EE_PMT_Sofort.pm.php:24
 msgid ""
 "After finalizing your registration, you will be transferred to the website "
 "of your bank where your payment will be securely processed."
@@ -49,26 +55,43 @@ msgstr ""
 "After finalizing your registration, you will be transferred to the website "
 "of your bank where your payment will be securely processed."
 
-#: includes/digiwallet.class.gateway.php:192
+#: includes/digiwallet.class.gateway.php:212
+#: payment_methods/EPS/EEG_EPS.gateway.php:178
 msgid "Digiwallet Error message: "
 msgstr "Digiwallet Error message: "
 
-#: payment_methods/Sofort/EE_PMT_Sofort.pm.php:46
-#: payment_methods/Bancontact/EE_PMT_Bancontact.pm.php:46
-#: payment_methods/Paysafecard/EE_PMT_Paysafecard.pm.php:46
-#: payment_methods/Ideal/EE_PMT_Ideal.pm.php:47
-#: payment_methods/Paypal/EE_PMT_Paypal.pm.php:46
 #: payment_methods/Afterpay/EE_PMT_Afterpay.pm.php:46
+#: payment_methods/Bancontact/EE_PMT_Bancontact.pm.php:46
 #: payment_methods/Bankwire/EE_PMT_Bankwire.pm.php:46
 #: payment_methods/Creditcard/EE_PMT_Creditcard.pm.php:46
-msgid "Digiwallet Outlet Identifier"
-msgstr "Digiwallet Outlet Identifier"
+#: payment_methods/EPS/EE_PMT_EPS.pm.php:45
+#: payment_methods/Giropay/EE_PMT_Giropay.pm.php:45
+#: payment_methods/Ideal/EE_PMT_Ideal.pm.php:47
+#: payment_methods/Paypal/EE_PMT_Paypal.pm.php:46
+#: payment_methods/Paysafecard/EE_PMT_Paysafecard.pm.php:46
+#: payment_methods/Sofort/EE_PMT_Sofort.pm.php:46
+msgid "Digiwallet Outletcode"
+msgstr "Digiwallet Outletcode"
+
+#: payment_methods/Afterpay/EE_PMT_Afterpay.pm.php:54
+#: payment_methods/Bancontact/EE_PMT_Bancontact.pm.php:54
+#: payment_methods/Bankwire/EE_PMT_Bankwire.pm.php:54
+#: payment_methods/Creditcard/EE_PMT_Creditcard.pm.php:54
+#: payment_methods/EPS/EE_PMT_EPS.pm.php:53
+#: payment_methods/Giropay/EE_PMT_Giropay.pm.php:53
+#: payment_methods/Ideal/EE_PMT_Ideal.pm.php:55
+#: payment_methods/Paypal/EE_PMT_Paypal.pm.php:54
+#: payment_methods/Paysafecard/EE_PMT_Paysafecard.pm.php:54
+#: payment_methods/Sofort/EE_PMT_Sofort.pm.php:54
+msgid "Digiwallet token"
+msgstr "Digiwallet token"
 
 #. Author of the plugin
 msgid "DigiWallet.nl"
 msgstr "DigiWallet.nl"
 
-#: includes/digiwallet.class.gateway.php:233
+#: includes/digiwallet.class.gateway.php:253
+#: payment_methods/EPS/EEG_EPS.gateway.php:194
 msgid "Error occurred while trying to process the payment."
 msgstr "Error occurred while trying to process the payment."
 
@@ -89,6 +112,25 @@ msgid ""
 msgstr ""
 "If it is necessary for payments abroad, then the BIC code from the bank "
 "<span style=\"color:red\">%1$s</span> and the name of the bank is %2$s."
+
+#: payment_methods/Afterpay/EE_PMT_Afterpay.pm.php:55
+#: payment_methods/Bancontact/EE_PMT_Bancontact.pm.php:55
+#: payment_methods/Bankwire/EE_PMT_Bankwire.pm.php:55
+#: payment_methods/Creditcard/EE_PMT_Creditcard.pm.php:55
+#: payment_methods/EPS/EE_PMT_EPS.pm.php:54
+#: payment_methods/Giropay/EE_PMT_Giropay.pm.php:54
+#: payment_methods/Ideal/EE_PMT_Ideal.pm.php:56
+#: payment_methods/Paypal/EE_PMT_Paypal.pm.php:55
+#: payment_methods/Paysafecard/EE_PMT_Paysafecard.pm.php:55
+#: payment_methods/Sofort/EE_PMT_Sofort.pm.php:55
+msgid ""
+"Obtain your Token here, go to: <a href=\"https://www.digiwallet."
+"nl/en/user/dashboard\" target=\"_blank\">https://www.digiwallet."
+"nl/en/user/dashboard</a> >> choose your Organization >> Developers"
+msgstr ""
+"Obtain your Token here, go to: <a href=\"https://www.digiwallet."
+"nl/en/user/dashboard\" target=\"_blank\">https://www.digiwallet."
+"nl/en/user/dashboard</a> >> choose your Organization >> Developers"
 
 #: payment_methods/Bankwire/templates/bankwire_payment_details_content.template.php:15
 #, php-format
@@ -116,14 +158,16 @@ msgstr ""
 "Would you be so friendly to transfer the total amount of € %1$s to the "
 "bankaccount <b style=\"color:red\">%2$s</b> in name of %3$s* ?"
 
-#: payment_methods/Sofort/templates/sofort_intro.template.php:3
-#: payment_methods/Bancontact/templates/bancontact_intro.template.php:3
-#: payment_methods/Paysafecard/templates/paysafecard_intro.template.php:3
-#: payment_methods/Ideal/templates/ideal_intro.template.php:3
-#: payment_methods/Paypal/templates/paypal_intro.template.php:3
 #: payment_methods/Afterpay/templates/afterpay_intro.template.php:3
+#: payment_methods/Bancontact/templates/bancontact_intro.template.php:3
 #: payment_methods/Bankwire/templates/bankwire_intro.template.php:3
 #: payment_methods/Creditcard/templates/creditcard_intro.template.php:3
+#: payment_methods/EPS/templates/eps_intro.template.php:3
+#: payment_methods/Giropay/templates/giropay_intro.template.php:3
+#: payment_methods/Ideal/templates/ideal_intro.template.php:3
+#: payment_methods/Paypal/templates/paypal_intro.template.php:3
+#: payment_methods/Paysafecard/templates/paysafecard_intro.template.php:3
+#: payment_methods/Sofort/templates/sofort_intro.template.php:3
 msgid "You need a Digiwallet account to use this plugin. Sign up on"
 msgstr "You need a Digiwallet account to use this plugin. Sign up on"
 
@@ -133,31 +177,34 @@ msgid ""
 msgstr ""
 "You will receive your order as soon as we receive payment from the bank."
 
-#: payment_methods/Sofort/EE_PMT_Sofort.pm.php:47
-#: payment_methods/Bancontact/EE_PMT_Bancontact.pm.php:47
-#: payment_methods/Paysafecard/EE_PMT_Paysafecard.pm.php:47
-#: payment_methods/Ideal/EE_PMT_Ideal.pm.php:48
-#: payment_methods/Paypal/EE_PMT_Paypal.pm.php:47
 #: payment_methods/Afterpay/EE_PMT_Afterpay.pm.php:47
+#: payment_methods/Bancontact/EE_PMT_Bancontact.pm.php:47
 #: payment_methods/Bankwire/EE_PMT_Bankwire.pm.php:47
 #: payment_methods/Creditcard/EE_PMT_Creditcard.pm.php:47
+#: payment_methods/EPS/EE_PMT_EPS.pm.php:46
+#: payment_methods/Giropay/EE_PMT_Giropay.pm.php:46
+#: payment_methods/Ideal/EE_PMT_Ideal.pm.php:48
+#: payment_methods/Paypal/EE_PMT_Paypal.pm.php:47
+#: payment_methods/Paysafecard/EE_PMT_Paysafecard.pm.php:47
+#: payment_methods/Sofort/EE_PMT_Sofort.pm.php:47
 msgid ""
-"Your Digiwallet Outlet Identifier, You can find this in your organization "
-"dashboard under Websites & Outlets on <a href=\"https://www.digiwallet.nl\" "
-"target=\"_blank\">https://www.digiwallet.nl</a>"
+"Your Digiwallet Outletcode, Go to: <a href=\"https://www.digiwallet."
+"nl/en/user/dashboard\" target=\"_blank\">https://www.digiwallet."
+"nl/en/user/dashboard</a> >> choose your Organization >> Websites & Outlets"
 msgstr ""
-"Your Digiwallet Outlet Identifier, You can find this in your organization "
-"dashboard under Websites & Outlets on <a href=\"https://www.digiwallet.nl\" "
-"target=\"_blank\">https://www.digiwallet.nl</a>"
+"Your Digiwallet Outletcode, Go to: <a href=\"https://www.digiwallet."
+"nl/en/user/dashboard\" target=\"_blank\">https://www.digiwallet."
+"nl/en/user/dashboard</a> >> choose your Organization >> Websites & Outlets"
 
-#: includes/digiwallet.class.gateway.php:201
+#: includes/digiwallet.class.gateway.php:221
+#: payment_methods/EPS/EEG_EPS.gateway.php:168
 msgid "Your payment is approved."
 msgstr "Your payment is approved."
 
-#: includes/digiwallet.class.gateway.php:192
+#: includes/digiwallet.class.gateway.php:212
 msgid "Your payment is failed."
 msgstr "Your payment is failed."
 
-#: includes/digiwallet.class.gateway.php:212
+#: includes/digiwallet.class.gateway.php:232
 msgid "Your payment is paid partial."
 msgstr "Your payment is paid partial."

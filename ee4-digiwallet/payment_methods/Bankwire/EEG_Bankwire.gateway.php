@@ -33,7 +33,6 @@ class EEG_Bankwire extends Digiwallet_Gateway
     }
     
     public function setRedirect($payment, $url, $digiwallet=null, $return_url=null) {
-        $_SESSION['bwData_'.$payment->transaction()->ID()] = $digiwallet->getMoreInformation();
         $payment->set_redirect_url($return_url);
         $payment->set_redirect_args(array('transactionID' => $digiwallet->getTransactionId()));
         return true;

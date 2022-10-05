@@ -8,8 +8,8 @@
  * 
  * Plugin Name: Event Espresso - Digiwallet (EE 4.x+)
  * Plugin URI: https://www.digiwallet.nl
- * Description: Activates iDEAL, Bancontact, Sofort Banking, Visa / Mastercard Credit cards, PaysafeCard, AfterPay, BankWire, PayPal and Refunds in Event Espresso.
- * Version: 1.0.2
+ * Description: Activates iDEAL, Bancontact, Sofort, Visa / Mastercard Credit cards, PaysafeCard, AfterPay, BankWire, PayPal and Refunds in Event Espresso.
+ * Version: 1.0.3
  * Author: DigiWallet.nl
  * Author URI: https://www.digiwallet.nl
  * Text Domain: digiwallet

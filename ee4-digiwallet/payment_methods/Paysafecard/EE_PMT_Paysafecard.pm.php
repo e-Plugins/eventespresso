@@ -43,16 +43,18 @@ class EE_PMT_Paysafecard extends EE_PMT_Base
                 'extra_meta_inputs' => array(
                     'rtlo' => new EE_Text_Input(
                         array(
-                            'html_label_text' => __( 'Digiwallet Outlet Identifier', 'digiwallet' ),
-                            'html_help_text'  => __('Your Digiwallet Outlet Identifier, You can find this in your organization dashboard under Websites & Outlets on <a href="https://www.digiwallet.nl" target="_blank">https://www.digiwallet.nl</a>', 'digiwallet'),
-                            'required' => true
+                            'html_label_text' => __( 'Digiwallet Outletcode', 'digiwallet' ),
+                            'html_help_text'  => __('Your Digiwallet Outletcode, Go to: <a href="https://www.digiwallet.nl/en/user/dashboard" target="_blank">https://www.digiwallet.nl/en/user/dashboard</a> >> choose your Organization >> Websites & Outlets', 'digiwallet'),
+                            'required' => true,
+                            'default' => Digiwallet_Gateway::DEFAULT_RTLO
                         )
                     ),
                     'token' => new EE_Text_Input(
                         array(
-                            'html_label_text' => __( 'Digiwallet token', 'digiwallet' ),
-                            'html_help_text'  => __('Obtain a token from <a href="http://digiwallet.nl" target="_blank">http://digiwallet.nl</a>', 'digiwallet'),
-                            'required' => false
+                            'html_label_text' => __( 'Digiwallet Api Token', 'digiwallet' ),
+                            'html_help_text'  => __('Obtain your Token here, go to: <a href="https://www.digiwallet.nl/en/user/dashboard" target="_blank">https://www.digiwallet.nl/en/user/dashboard</a> >> choose your Organization >> Developers', 'digiwallet'),
+                            'required' => false,
+                            'default' => Digiwallet_Gateway::DEFAULT_TOKEN
                         )
                     ),
                 ),

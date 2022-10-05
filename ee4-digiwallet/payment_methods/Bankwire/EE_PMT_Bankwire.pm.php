@@ -9,9 +9,9 @@ if (! defined('EVENT_ESPRESSO_VERSION')) {
 class EE_PMT_Bankwire extends EE_PMT_Base
 {
 
-    public $tpPaymethodDisplayName = 'Bankwire';
+    public $tpPaymethodDisplayName = 'Bankwire - Overschrijving';
 
-    public $tpPaymethodName = 'Bankwire';
+    public $tpPaymethodName = 'Bankwire - Overschrijving';
 
     public $tpPaymethodId = 'BW';
 
@@ -43,16 +43,18 @@ class EE_PMT_Bankwire extends EE_PMT_Base
                 'extra_meta_inputs' => array(
                     'rtlo' => new EE_Text_Input(
                         array(
-                            'html_label_text' => __( 'Digiwallet Outlet Identifier', 'digiwallet' ),
-                            'html_help_text'  => __('Your Digiwallet Outlet Identifier, You can find this in your organization dashboard under Websites & Outlets on <a href="https://www.digiwallet.nl" target="_blank">https://www.digiwallet.nl</a>', 'digiwallet'),
-                            'required' => true
+                            'html_label_text' => __( 'Digiwallet Outletcode', 'digiwallet' ),
+                            'html_help_text'  => __('Your Digiwallet Outletcode, Go to: <a href="https://www.digiwallet.nl/en/user/dashboard" target="_blank">https://www.digiwallet.nl/en/user/dashboard</a> >> choose your Organization >> Websites & Outlets', 'digiwallet'),
+                            'required' => true,
+                            'default' => Digiwallet_Gateway::DEFAULT_RTLO
                         )
                     ),
                     'token' => new EE_Text_Input(
                         array(
-                            'html_label_text' => __( 'Digiwallet token', 'digiwallet' ),
-                            'html_help_text'  => __('Obtain a token from <a href="http://digiwallet.nl" target="_blank">http://digiwallet.nl</a>', 'digiwallet'),
-                            'required' => false
+                            'html_label_text' => __( 'Digiwallet Api Token', 'digiwallet' ),
+                            'html_help_text'  => __('Obtain your Token here, go to: <a href="https://www.digiwallet.nl/en/user/dashboard" target="_blank">https://www.digiwallet.nl/en/user/dashboard</a> >> choose your Organization >> Developers', 'digiwallet'),
+                            'required' => false,
+                            'default' => Digiwallet_Gateway::DEFAULT_TOKEN
                         )
                     ),
                 ),
@@ -75,33 +77,38 @@ class EE_PMT_Bankwire extends EE_PMT_Base
         return null;
     }
     
-    /**
-     * For adding any html output ab ove the payment overview.
-     * Many gateways won't want ot display anything, so this function just returns an empty string.
-     * Other gateways may want to override this, such as offline gateways.
-     * @return string
-     */
-    public function payment_overview_content(EE_Payment $payment){
-        if (empty($_SESSION)) session_start();
+    public function payment_overview_content(EE_Payment $payment)
+    {
+        global $wpdb;
+        
         $extra_meta_for_payment_method = $this->_pm_instance->all_extra_meta_array();
-        if (empty($_SESSION['bwData_'.$payment->transaction()->ID()]) || $payment->transaction()->status_ID() === EEM_Transaction::complete_status_code) {
+        /* Get transaction data from database */
+        $sql = "SELECT * FROM `" . $wpdb->base_prefix . DIGIWALLET_TABLE_NAME . "` WHERE `order_id`=%s AND `paymethod`=%s order by `id` DESC";
+        $tpPayment = $wpdb->get_row($wpdb->prepare($sql, $payment->transaction()->ID(), $this->tpPaymethodId));
+        
+        if (! $tpPayment) {
             return null;
         }
-        list($trxid, $accountNumber, $iban, $bic, $beneficiary, $bank) = explode("|", $_SESSION['bwData_'.$payment->transaction()->ID()]);
+        
+        if ($payment->transaction()->status_ID() === EEM_Transaction::complete_status_code) {
+            return null;
+        }
+        
+        list($trxid, $accountNumber, $iban, $bic, $beneficiary, $bank) = explode("|", $tpPayment->more);
         
         $template_vars = array_merge(
             array(
                 'trxid' => $trxid,
                 'accountNumber' => $accountNumber,
-                'iban' => $iban, 
-                'bic' => $bic, 
-                'beneficiary' => $beneficiary, 
+                'iban' => $iban,
+                'bic' => $bic,
+                'beneficiary' => $beneficiary,
                 'bank' => $bank,
                 'amount' => $payment->transaction()->remaining(),
                 'email' => $payment->get_primary_attendee()->email()
             ),
             $extra_meta_for_payment_method);
-
+        
         return EEH_Template::locate_template(
             realpath(dirname(__FILE__)) . DS . 'templates'.DS.'bankwire_payment_details_content.template.php',
             $template_vars

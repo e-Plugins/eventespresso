@@ -10,7 +10,9 @@ class Digiwallet_Gateway extends EE_Offsite_Gateway
 {
     const DIGIWALLET_API = "https://api.digiwallet.nl/";
     
-    const DEFAULT_RTLO = 93929;
+    const DEFAULT_RTLO = 156187;
+    
+    const DEFAULT_TOKEN = 'bf72755a648832f48f0995454';
     
     const METHOD_SOFORT = "sofort";
     
@@ -23,7 +25,7 @@ class Digiwallet_Gateway extends EE_Offsite_Gateway
     protected $forceIPN = false;
     
     /**
-     * Digiwallet Outlet Identifier
+     * Digiwallet Outletcode
      *
      * @var string
      */
