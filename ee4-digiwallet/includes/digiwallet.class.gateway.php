@@ -71,7 +71,7 @@ class Digiwallet_Gateway extends EE_Offsite_Gateway
         parent::set_settings($settings_array);
     }
 
-    public function EE_finalize($previousReturnValue,EE_Base_Class $object, $argsArray){return null;}
+    public static function EE_finalize($previousReturnValue,EE_Base_Class $object, $argsArray){return null;}
     
     /**
      *
@@ -82,7 +82,7 @@ class Digiwallet_Gateway extends EE_Offsite_Gateway
     public function set_redirection_info($payment, $billing_info = array(), $return_url = null, $notify_url = null, $cancel_url = null)
     {
         global $wpdb;
-        add_filter('FHEE__EE_Registration__finalize', array('this', 'EE_finalize'), 10, 3);
+        add_filter('FHEE__EE_Registration__finalize', array('Digiwallet_Gateway', 'EE_finalize'), 10, 3);
         
         $transaction = $payment->transaction();
         /**

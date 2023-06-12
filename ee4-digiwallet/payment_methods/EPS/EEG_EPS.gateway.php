@@ -28,7 +28,7 @@ class EEG_EPS extends Digiwallet_Gateway
     public function set_redirection_info($payment, $billing_info = array(), $return_url = null, $notify_url = null, $cancel_url = null)
     {
         global $wpdb;
-        add_filter('FHEE__EE_Registration__finalize', array('this', 'EE_finalize'), 10, 3);
+        add_filter('FHEE__EE_Registration__finalize', array('Digiwallet_Gateway', 'EE_finalize'), 10, 3);
         
         $transaction = $payment->transaction();
         /**
@@ -64,8 +64,19 @@ class EEG_EPS extends Digiwallet_Gateway
         
         $request = new CreateTransaction($digiwalletApi, $formParams);
         $request->withBearer($this->_token);
-        /** @var \Digiwallet\Packages\Transaction\Client\Response\CreateTransaction $apiResult */
-        $apiResult = $request->send();
+        try {
+            /** @var \Digiwallet\Packages\Transaction\Client\Response\CreateTransaction $apiResult */
+            $apiResult = $request->send();
+        } catch (\Exception $e) {
+            error_log($e->getMessage());
+            EE_Error::add_error(
+                $e->getMessage(),
+                __FILE__,
+                __FUNCTION__,
+                __LINE__
+            );
+            return $payment;
+        }
         if ($apiResult->status() !== 0) {
             error_log($apiResult->message());
             EE_Error::add_error(

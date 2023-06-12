@@ -13,7 +13,7 @@ if (!defined('EVENT_ESPRESSO_VERSION'))
                 </p>
                 <p>
                     <?php printf( __('State the payment feature <b>%1$s</b>, this way the payment can be automatically processed.<br>
-                    As soon as this happens you shall receive a confirmation mail on %2$s.', 'digiwallet'), esc_html($trxid), esc_html($email))?>
+                    As soon as we receive your payment, you shall receive a confirmation mail on %2$s.', 'digiwallet'), esc_html($trxid), esc_html($email))?>
                 </p>
                 <p>
                     <?php printf( __( 'If it is necessary for payments abroad, then the BIC code from the bank <span style="color:red">%1$s</span> and the name of the bank is %2$s.', 'digiwallet' ), esc_html($bic), esc_html($bank));?>
